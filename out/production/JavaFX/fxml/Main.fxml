@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(#7a2048,#408ec6); -fx-border-width: 1; -fx-border-color: #1e2761;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.main">
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="308.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton layoutX="10.0" layoutY="30.0" onAction="#add_account" prefHeight="39.0" prefWidth="122.0" ripplerFill="#1e2761" text="Add Account" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton onAction="#accounts" prefHeight="39.0" prefWidth="122.0" ripplerFill="#1e2761" text="Accounts" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="28.0" layoutY="10.0" onAction="#settings" prefHeight="39.0" prefWidth="121.0" ripplerFill="#1e2761" text="Settings" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </VBox>
+   </left>
+   <top>
+      <AnchorPane prefHeight="70.0" prefWidth="598.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="154.0" layoutY="21.0" text="Steam Account Switcher" textFill="WHITE">
+               <font>
+                  <Font name="Consolas" size="24.0" />
+               </font>
+            </Label>
+            <JFXButton defaultButton="true" layoutX="550.0" layoutY="14.0" onAction="#close_application" ripplerFill="#1e2761" text="x" textFill="WHITE" AnchorPane.rightAnchor="14.0">
+               <font>
+                  <Font name="Consolas" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <ListView fx:id="list_view" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
