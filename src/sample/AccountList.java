@@ -20,6 +20,11 @@ public class AccountList {
         }else return false;
     }
 
+    public int size(){ return accounts.size(); }
+    public Account get(int i){
+        return accounts.get(i);
+    }
+
     @Override
     public String toString() {
         return accounts.toString();

@@ -29,15 +29,15 @@
             <Font name="Consolas" size="18.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="gname_TextFied" layoutX="14.0" layoutY="100.0" promptText="gaming name" />
+      <JFXTextField fx:id="gName_TextField" layoutX="14.0" layoutY="100.0" promptText="gaming name" />
       <JFXTextField fx:id="username_TextField" layoutX="14.0" layoutY="180.0" promptText="username" />
       <JFXPasswordField fx:id="pass_TextField" layoutX="14.0" layoutY="266.0" promptText="password" />
-      <JFXButton layoutX="340.0" layoutY="276.0" text="Add" textFill="#1e2761">
+      <JFXButton layoutX="340.0" layoutY="276.0" onAction="#add" text="Add" textFill="#1e2761">
          <font>
             <Font name="Consolas" size="16.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="406.0" layoutY="276.0" text="Cancel" textFill="#1e2761">
+      <JFXButton layoutX="406.0" layoutY="276.0" onAction="#cancel" text="Cancel" textFill="#1e2761">
          <font>
             <Font name="Consolas" size="16.0" />
          </font>

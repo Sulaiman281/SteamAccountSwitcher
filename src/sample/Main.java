@@ -9,6 +9,7 @@ import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
+    public static AccountList accountList = new AccountList();
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/Main.fxml"));
