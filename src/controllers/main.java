@@ -12,9 +12,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 import sample.Account;
 import sample.AccountList;
 import sample.Main;
+import sample.SteamLoad;
 
 import java.io.IOException;
 
@@ -54,7 +56,9 @@ public class main {
     }
 
     public void close_application(ActionEvent actionEvent) {
-
+        Stage stage = (Stage)root.getScene().getWindow();
+        Main.accountList.save_accounts();
+        stage.close();
     }
 
     public void load_accounts(){
@@ -79,8 +83,14 @@ public class main {
             Hyperlink name = new Hyperlink();
             name.setText(a.get(i).getNickname());
             name.setFont(Font.font("Consolas",16));
+            int finalI1 = i;
             name.setOnAction(e-> {
                 System.out.println("open steam account");
+                SteamLoad steam = new SteamLoad();
+                if(steam.isSteamRunning())
+                    steam.closeSteam();
+                steam.openAccount(a.get(finalI1));
+
             });
             JFXButton edit_button = new JFXButton("Edit Account");
             edit_button.setFont(Font.font("Consolas",16));
@@ -91,8 +101,10 @@ public class main {
             uName.setFont(Font.font("Consolas",16));
             JFXButton deleteBtn = new JFXButton("Delete Account");
             deleteBtn.setFont(Font.font("Consolas",16));
+            int finalI = i;
             deleteBtn.setOnAction(e->{
-                System.out.println("Delete account code here");
+                a.delete(a.get(finalI));
+                this.root.setCenter(list_view);
             });
             row.setSpacing(20);
             row.getChildren().addAll(name,uName,edit_button,deleteBtn);

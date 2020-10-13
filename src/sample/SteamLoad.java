@@ -42,9 +42,9 @@ public class SteamLoad {
         return (code == 1 ? false : true);
     }
     public void openAccount(Account _account){
-        String steamPath = "C:\\Program Files (x86)\\Steam\\steam.exe";
+        //String steamPath = "C:\\Program Files (x86)\\Steam\\steam.exe";
         try {
-            Process p = Runtime.getRuntime().exec(steamPath+" "+_account.getParameters());
+            Process p = Runtime.getRuntime().exec(Main.steamPath+" "+_account.getParameters());
         } catch (IOException e) {
             e.printStackTrace();
         }
